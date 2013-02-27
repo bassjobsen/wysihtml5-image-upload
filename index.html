@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap Wysihtml5 with Custom Image Insert and Upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="//cdn.jsdelivr.net/bootstrap.wysihtml5/0.0.2/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      textarea {
+  	height: 200px;
+		width: 100%;
+		}
+      
+    </style>
+  
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png"-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <span class="brand" style="color:white;font-size:2em;">Bootstrap Wysihtml5 with Custom Image Insert and Upload</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Main hero unit for a primary marketing message or call to action -->
+<div class='row'>
+  <div class='span12'>
+    <textarea class='wysi'></textarea>
+  </div>
+</div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>About</h2>
+          <p><p>This is a sample page showing Bootstrap Wysihtml5 with a customized image dialog and file upload. 
+The idea and code from the customized image dialog came from <a href="http://rcode5.wordpress.com/2012/11/01/custom-image-upload-modal-with-bootstrap-wysihtml5/comment-page-1/">Custom Image Upload Modal with Bootstrap-Wysihtml5</a>. I combined this code with the code of <a href="http://lagoscript.org/jquery/upload">jQuery.upload</a> to add
+the file upload option.</p>
+
+<p>Try it click the image dialog button. Try to insert or upload an images now. Images are not saved in this demo.</p>
+
+<p>To use this code you need two server side handlers:</p>
+<ol>
+<li>Gives a list of images in json (example imagelist.php)</li>
+<li>Handles file upload and save the file and returns result in json (example upload.php)</li>
+</ol></p>
+        </div>
+        <div class="span4">
+          <h2>Download</h2>
+          <p>Please download, comment and fork this code on GitHub</p>
+          <p><a class="btn btn-success" href="#">Download code &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>references/tools:</h2>
+     <ul>
+      <li>
+        <a href='http://rcode5.wordpress.com/2012/11/01/custom-image-upload-modal-with-bootstrap-wysihtml5/'>blog writeup</a>
+      </li>
+      <li>
+		  <a href="http://lagoscript.org/jquery/upload">jQuery.upload</a>
+	  </li>	  
+      <li>
+        <a href='http://rcode5.wordpress.com/2012/11/01/custom-image-upload-modal-with-bootstrap-wysihtml5/'>blog writeup</a>
+      </li>
+      <li>
+        <a href='http://jhollingworth.github.com/bootstrap-wysihtml5/'>bootstrap-wysihtml5</a>
+      </li>
+      <li>
+        <a href='https://github.com/xing/wysihtml5'>wysihtml5</a>
+      </li>
+      <li>
+        <a href='http://twitter.github.com/bootstrap/'>Twitter Bootstrap</a>
+      </li>
+      <li>
+        <a href='http://jquery.com/'>jQuery</a>
+      </li>
+      <li>
+        <a href='http://underscorejs.org/'>underscorejs</a>
+      </li>
+      <li>
+        <a href='http://placeholder.it'>placeholder.it</a>
+      </li>
+      <li>
+        <a href='http://www.opensourcecms.eu/'>OpensourceCMS.EU</a>
+      </li>
+    </ul>
+    <p>This code is used by <a href="http://www.jamedowebsites.nl/">Jamedo Websites</a> and <a href="http://www.gizzing.nl/">Gizzing</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; <a href="http://www.w3masters.nl/">w3Masters</a> 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/wysihtml5/0.3.0/wysihtml5-0.3.0.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+	
+	<!--script type="/js/bootstrap-wysihtml5-0.0.2/bootstrap-wysihtml5-0.0.2.min.js"></script-->
+	<script type="text/javascript" src="js/bootstrap-wysihtml5-0.0.2.js"></script>
+	<script type="text/javascript" src="js/custom_image_and_upload_wysihtml5.js"></script>
+	<script type="text/javascript" src="js/jqueryupload.js"></script>
+  </body>
+</html>
+
