@@ -13,6 +13,7 @@ To use this code you have to write to server side handlers. One gives you the fi
 The second handles the file uploads and returns result in json too.
 
 Files to reference
+------------------
 
 ```html
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -29,18 +30,18 @@ Files to reference
 
 
 Usage
-
+-----
 ```html
 <textarea class="wysi" placeholder="Enter text ..."></textarea>
 ```
 
 
 Handlers
-
+--------
 You have to write your own handlers. See examples files included: imagelist.php and upload.php
 
 imagelist.php
-
+-------------
 When you change the name / uri you have to change it in custom_image_and_upload_wysihtml5.js too
 returns a list of images in json format
 ```json
@@ -51,7 +52,7 @@ returns a list of images in json format
 
 
 upload.php 
-
+----------
 When you change the name / uri you have to change it in custom_image_and_upload_wysihtml5.js too
 A multipart/form-data request is send to the handler like: Content-Disposition: form-data; name="file1"; filename="images.png" you can catch this with any server side language.
 Returns status:0 on failure or status:1 on success both json encoded.
