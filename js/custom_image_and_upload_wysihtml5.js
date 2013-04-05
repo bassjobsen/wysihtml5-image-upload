@@ -5,7 +5,11 @@ wysiHelpers = {
     /* this is what goes in the wysiwyg content after the image has been chosen */
     var tmpl;
     var imgEntry = "<img src='<%= url %>' alt='<%= caption %>'>";
-    tmpl = _.template( imgEntry );
+    tmpl = _.template("<div class='shrink_wrap'>" +
+                      imgEntry +
+                      "</div>" +
+                      "<p class='credit'><%= caption %></p>" +
+                      "<hr>");
     return tmpl;
   }
 };
@@ -58,6 +62,8 @@ bootWysiOverrides = {
       var $row = $(ev.currentTarget);
       insertImage($row.data());
       insertImageModal.modal('hide');
+      $('#uploadresult').html('');
+      $('#file1').val('');
     });
     
     insertImageModal.on('hide', function() {
@@ -69,22 +75,21 @@ bootWysiOverrides = {
       
       if (!activeButton) {
         insertImageModal.modal('show');
-         
-         $('#file1').change(function() {
-            $(this).uploadimage('upload.php', function(res) {
-                //$(res).insertAfter(this);
-                if(res.status)
-                {
-					 chooser.append(optionTemplate({"file":res.file,"caption":res.caption,"foreground":res.forground,"background":res.background}));
-					 $('#uploadresult').html('Upload successful').addClass('alert alert-success');
-				}
-				else
-				{
-					$('#uploadresult').html('Upload failed').addClass('alert alert-error');
-				}		
-            }, 'json');
-        });
         
+        $('#file1').change(function() {
+          $(this).uploadimage('upload.php', function(res) {
+            if(res.status)
+            {
+	      chooser.append(optionTemplate({"file":res.file,"caption":res.caption}));
+	      $('#uploadresult').html('Upload successful').removeClass().addClass('alert alert-success');
+	    }
+	    else
+	    {
+	      $('#uploadresult').html('Upload failed').removeClass().addClass('alert alert-error');
+            }		
+          }, 'json');
+        });
+
         insertImageModal.on('click.dismiss.modal', '[data-dismiss="modal"]', function(e) {
           e.stopPropagation();
         });
@@ -128,10 +133,10 @@ $(function() {
           "<div class='modal-body'>" +
           "<div class='chooser_wrapper'>" +
           "<table class='image_chooser images'></table>" +
-          "<input name=\"file\" id=\"file1\" type=\"file\"><br>" +
+          "<h4>Or Upload one to insert</h4>" +
+          "<input name=\"file\" id=\"file1\" type=\"file\">" +
           "<div id=\"uploadresult\"></div>" +
           "</div>" +
-          "" +
           "</div>" +
           "<div class='modal-footer'>" +
           "<a href='#' class='btn' data-dismiss='modal'>" + locale.image.cancel + "</a>" +
@@ -143,7 +148,8 @@ $(function() {
     }
   };
 
+  $('.tip').tooltip();
   $('textarea.wysi').each(function() {
-	   $(this).wysihtml5($.extend(wysiwygOptions, {html:true, color:false, stylesheets:[]}));
+    $(this).wysihtml5($.extend(wysiwygOptions, {html:true, color:false, stylesheets:[]}));
   });
 });

@@ -4,7 +4,7 @@
  */
 if (rand(0,3)>0) {
    	
-	 /* save your file here from _FILES['file']
+	 /* save your file here from _FILES['file1']
    	 * 
    	 * b.e. 
    	 * $filename = basename($_FILES['file1']['name']);
