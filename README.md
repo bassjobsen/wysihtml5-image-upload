@@ -10,7 +10,7 @@ Use the code below for handlers (example) in PHP. You can upload the files to a 
 rcode5's code builds a simple [Sinatra App](http://www.sinatrarb.com/) to demostrate the code.
 
 This sample code (powered by [W3Masters](http://www.w3masters.nl/) and [Twitter Bootstrap](http://twitter.github.com/bootstrap/) demonstrates how you can extend the nice image chooser dialog to the [Bootstrap-wysihtml5](https://github.com/jhollingworth/bootstrap-wysihtml5) wysiwyg editor by [rcode5](http://rcode5.wordpress.com/2012/11/01/custom-image-upload-modal-with-bootstrap-wysihtml5/comment-page-1/) with file upload.
-File upload is provide by [jQuery.upload](http://lagoscript.org/jquery/upload).
+File upload is provide by [jQuery.upload](https://github.com/bassjobsen/jqueryupload).
 
 To see te code in action try [the demo](http://www.w3masters.nl/bootstrap-wysihtml5/).
 
